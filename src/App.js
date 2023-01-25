@@ -1,20 +1,15 @@
 import './App.css'
-import Cards from './components/Cards.jsx'
-import characters from './data.js'
-import Nav from './components/Nav.jsx'
+import Cards from './components/Cards/Cards.jsx'  
+import Nav from './components/Nav/Nav.jsx'
+import About from './components/About/About.jsx'
+import Detail from './components/Detail/Detail.jsx'
+import Error from './components/Error/Error.jsx'
 import { useState } from 'react'
-
+import { Route,Routes } from 'react-router-dom'
 
 function App () {
 
   const [characters,setCharacters] = useState([])
-  
-/*   const example = {
-    name: 'Morty Smith',
-    species: 'Human',
-    gender: 'Male',
-    image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
- }; */
 
  const onSearch = (character) => {
   fetch(`https://rickandmortyapi.com/api/character/${character}`)
@@ -33,16 +28,14 @@ const onClose = (id) => {
 }
 
   return (
-    <div className='App' style={{ padding: '25px' }}>
-      <Nav onSearch = {onSearch}/>
-      <div>
-        <Cards
-          characters={characters}
-          onClose = {onClose}
-        />
-      </div>
-      <hr />
-      
+    <div>
+    <Nav onSearch = {onSearch}/>
+    <Routes className='App' style={{ padding: '25px' }}>
+      <Route path='/home' element={<Cards characters={characters} onClose = {onClose}/>}/>
+      <Route path='/about' element={<About/>}/>
+      <Route path='/detail/:detailId' element={<Detail/>}/>
+      <Route path='*' element={<Error/>}></Route>
+    </Routes>
     </div>
   )
 }

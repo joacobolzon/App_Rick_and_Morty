@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Img = styled.img`
 border-radius : 30px;
@@ -31,12 +32,17 @@ color: #fff;
 font: arial;
 font-size: 25px;
 `
+const Title = styled.h2`
+color: #fff;
+font: arial;
+font-size: 25px;
+`
 
 export default function Card(props) {
    return (
       <DivCard>
          <Button onClick={() => props.onClose(props.id)}>X</Button>
-         <H2Description>{props.name}</H2Description>
+         <Link to={`/detail/${props.id}`}><Title>{props.name}</Title></Link>
          <H2Description>{props.species}</H2Description>
          <H2Description>{props.gender}</H2Description>
          <Img  src={props.image} alt="Img not found" />
