@@ -1,16 +1,9 @@
 import Card from '../Card/Card.jsx';
-import styled from 'styled-components';
-
-const DivContainer = styled.div`
-align-items : center;
-display : flex;
-flex-direction: row;
-justify-content: space-around;
-`
+import './Cards.modules.css'
 
 export default function Cards(props) {
    const { characters } = props;
-   return <DivContainer>
+   return <div className='cards_divContainer'>
       {characters.map(character =>
          <Card 
             key ={character.name}
@@ -21,5 +14,5 @@ export default function Cards(props) {
             id={character.id}
             onClose = {props.onClose}
          />)}
-   </DivContainer>;
+   </div>;
 }

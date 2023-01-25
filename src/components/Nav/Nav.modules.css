@@ -1,0 +1,22 @@
+.nav_divContainer{
+    width:95%;
+    padding:20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction:row-reverse;
+    border-radius: 10px;
+    background-color: rgb(10, 256, 235,50%)
+}
+
+.nav_about{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.nav_about:hover{
+color: blue;
+}
+
+.nav_home:hover{
+    color: blue;
+}

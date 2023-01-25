@@ -1,12 +1,6 @@
 import { useState } from "react";
-import styled from "styled-components";
+import './SearchBar.modules.css'
 
-const InputSearch = styled.input`
-border-radius:10px;
-`
-const ButtonSend = styled.button`
-border-radius:10px;
-`
 
 export default function SearchBar(props) {
    
@@ -17,13 +11,14 @@ export default function SearchBar(props) {
    }
 
    return (
-      <div>
-         <InputSearch type='search' placeholder="Buscar"
+      <div className="searchbar_divContainer">
+         <input className="searchbar_input" type='search' placeholder="Buscar"
          onChange={handleChange}/>
-      <ButtonSend 
+      <button
+      className="searchbar_button"
       onClick={() => props.onSearch(character)}>
          Agregar
-      </ButtonSend>
+      </button>
       </div>
    );
 }

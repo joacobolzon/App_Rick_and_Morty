@@ -1,0 +1,57 @@
+.detail_firstDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.detail_divContainer{
+    background-color: rgb(100, 256, 235,30%);
+    border-radius: 20px;
+    padding: 10px;
+    color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.detail_img{
+    width: 500px;
+    border-radius: 30%;
+    box-shadow:2px -6px 10px #FFF;
+}
+
+.detail_button {
+    background: rgb(100, 256, 235,30%); /* color de fondo */
+    color: aquamarine; /* color de fuente */
+    border: 2px solid white; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 5px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .detail_button:hover {
+    color: grey;
+  }
+  .detail_button::after {
+    content: "";
+    background: rgb(100, 256, 235,70%);
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    border-radius: 50%;
+    left: -50%;
+    right: -50%;
+    top: -150%;
+    bottom: -150%;
+    transform: scale(0, 0);
+    transition: all 0.4s ease;
+  }
+  .detail_button:hover::after {
+    transition: all 0.6s ease-out;
+    transform: scale(1, 1);
+  }

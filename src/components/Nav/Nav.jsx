@@ -1,24 +1,15 @@
 import React from "react"
 import SearchBar from "../SearchBar/SearchBar.jsx"
-import styled from "styled-components"
 import { Link } from "react-router-dom"
+import './Nav.modules.css'
 
-const StyledNav = styled.div`
-width:95%;
-padding:20px;
-margin-bottom: 30px;
-display: flex;
-flex-direction:row-reverse;
-border-radius: 10px;
-background-color: rgb(10, 256, 235,50%)
-`
 
 export default function NavBar({onSearch}) {
     return (
-        <StyledNav>
+        <div className="nav_divContainer">
             <SearchBar onSearch={onSearch}/>
-            <Link to='/about'>About</Link>
-            <Link to='/home'>Home</Link>
-        </StyledNav>
+            <Link className="nav_about" to='/about'>About</Link>
+            <Link className="nav_home" to='/home'>Home</Link>
+        </div>
     )
 }

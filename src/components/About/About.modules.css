@@ -1,0 +1,12 @@
+.about_divContainer{
+    color : whitesmoke;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+}
+
+.about_Img{
+    width: 400px;
+    border-radius: 30px;
+}
