@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addFavorite,delFavorite } from '../../redux/actions/actions';
-import './Card.modules.css';
+import './Card.module.css';
 
 export function Card(props) {
    
@@ -17,6 +17,14 @@ export function Card(props) {
          props.addFavorite(props);
       }
    }
+
+   useEffect(() => {
+      props.myFavorites?.forEach((fav) => {
+         if (fav.id === props.id) {
+            setIsFav(true);
+         }
+      });
+   }, [props.myFavorites]);
 
    return (
       <div className='card_divContainer'>
@@ -42,4 +50,10 @@ export function mapDispatchToProps(dispatch){
    }
 }
 
-export default connect(null, mapDispatchToProps)(Card);
+export function mapStateToProps(state){
+   return {
+      myFavorites: state.myFavorites,
+   }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

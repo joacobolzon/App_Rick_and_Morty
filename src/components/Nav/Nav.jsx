@@ -1,7 +1,7 @@
 import React from "react"
 import SearchBar from "../SearchBar/SearchBar.jsx"
 import { Link } from "react-router-dom"
-import './Nav.modules.css'
+import './Nav.module.css'
 
 
 export default function NavBar({onSearch}) {

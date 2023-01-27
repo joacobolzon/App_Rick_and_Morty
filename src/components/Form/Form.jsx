@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Form.modules.css";
+import styles from "./Form.module.css";
 import validation from "./validation";
 
 export default function Form (props) {
