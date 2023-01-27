@@ -31,8 +31,8 @@ export default function Form (props) {
     }
 
     return(
-        <div className="form_divContainer">
-            <form className="form_divContainer" onSubmit={handleSubmit}>
+        <div styles='opacity: 0;'className="form_divContainer">
+            <form className="form_form" onSubmit={handleSubmit}>
                 <label>Username:</label>
                 <input 
                 type='text'

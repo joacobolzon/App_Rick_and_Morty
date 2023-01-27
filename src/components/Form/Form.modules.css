@@ -1,15 +1,34 @@
 .form_divContainer{
     display: flex;
     flex-direction: column;
-    background-color: grey;
+    background: url('https://wallpapercrafter.com/desktop/384199-TV-Show-Rick-and-Morty-Phone-Wallpaper.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     justify-content: center;
     align-items: center;
     width: 400px;
-    height: 800px;
-    margin:auto;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 4em;
-    padding: 10px;
+    border-radius: 15px;
 }
+
+.form_form{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(57, 166, 255);
+    font-weight: 700;
+    font-size: 25px;
+    background-color: rgba(8, 54, 92, 0.8);
+    border-radius: 15px;
+}
+
 
 .danger{
     font-size: 12px;
