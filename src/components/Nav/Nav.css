@@ -9,14 +9,26 @@
 }
 
 .nav_about{
+    color: rgb(100, 256, 205,70%);
     margin-left: 20px;
     margin-right: 20px;
 }
 
 .nav_about:hover{
-color: blue;
+    color: rgb(100, 256, 205,90%);
 }
 
+.nav_home{
+    color: rgb(100, 256, 205,70%);
+}
 .nav_home:hover{
-    color: blue;
+    color: rgb(100, 256, 205,90%);
+}
+
+.nav_favorites{
+    margin-right: 20px;
+    color: rgb(100, 256, 205,70%)
+}
+.nav_favorites:hover{
+    color: rgb(100, 256, 205,90%)
 }

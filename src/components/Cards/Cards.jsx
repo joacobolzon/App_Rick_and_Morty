@@ -1,5 +1,6 @@
-import {Card} from '../Card/Card.jsx';
-import './Cards.module.css'
+import React from 'react';
+import Card from '../Card/Card.jsx';
+import './Cards.css'
 
 export default function Cards(props) {
    const { characters } = props;

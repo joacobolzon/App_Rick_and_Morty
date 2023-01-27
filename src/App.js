@@ -4,11 +4,12 @@ import { Route , Routes } from 'react-router-dom'
 import './App.css'
 import Cards from './components/Cards/Cards.jsx'  
 import Nav from './components/Nav/Nav.jsx'
-
 import About from './components/About/About.jsx'
 import Detail from './components/Detail/Detail.jsx'
 import Error from './components/Error/Error.jsx'
 import Form from './components/Form/Form.jsx'
+import Favorites from './components/Favorites/Favorites.jsx'
+
 
 function App () {
   const navigate = useNavigate();
@@ -55,6 +56,7 @@ function App () {
               <Route exact path='/' element={<Form login={login}/>}></Route>
               <Route path='/home' element={<Cards characters={characters} onClose = {onClose}/>}/>
               <Route path='/about' element={<About/>}/>
+              <Route path='/favorites' element={<Favorites/>}/>
               <Route path='/detail/:detailId' element={<Detail/>}/>
               <Route path='*' element={<Error/>}></Route>
             </Routes>

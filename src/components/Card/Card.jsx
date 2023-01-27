@@ -1,8 +1,9 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addFavorite,delFavorite } from '../../redux/actions/actions';
-import './Card.module.css';
+import './Card.css';
 
 export function Card(props) {
    

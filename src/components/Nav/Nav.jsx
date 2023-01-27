@@ -1,7 +1,7 @@
 import React from "react"
 import SearchBar from "../SearchBar/SearchBar.jsx"
 import { Link } from "react-router-dom"
-import './Nav.module.css'
+import './Nav.css'
 
 
 export default function NavBar({onSearch}) {
@@ -10,6 +10,7 @@ export default function NavBar({onSearch}) {
             <SearchBar onSearch={onSearch}/>
             <Link className="nav_about" to='/about'>About</Link>
             <Link className="nav_home" to='/home'>Home</Link>
+            <Link className="nav_favorites" to='/favorites'>Favorites</Link>
         </div>
     )
 }
