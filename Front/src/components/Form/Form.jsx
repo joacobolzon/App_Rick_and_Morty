@@ -3,13 +3,14 @@ import styles from "./Form.css";
 import validation from "./validation";
 
 export default function Form (props) {
-    const [userData, setUserData] = React.useState({      username: '', 
-    password: '' 
+    const [userData, setUserData] = React.useState({
+    username: '', 
+    password: '',
     });
 
     const [errors, setErrors] = React.useState({
         username: '', 
-        password: '' 
+        password: '',
     })
 
     const handleInputChange = (e) => {
@@ -31,7 +32,7 @@ export default function Form (props) {
     }
 
     return(
-        <div styles='opacity: 0;'className="form_divContainer">
+        <div className="form_divContainer">
             <form className="form_form" onSubmit={handleSubmit}>
                 <label>Username:</label>
                 <input 
