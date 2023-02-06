@@ -1,27 +1,50 @@
-import { DELETE_FAVORITE , ADD_FAVORITE } from "../actions/types";
+import { DELETE_FAVORITE, ADD_FAVORITE, ORDER, FILTER } from "../actions/types";
 
 const initialState = {
-    myFavorites: []
+    myFavorites: [],
+    allCharacters: [],
 };
 
 
 
 
-function rootReducer(state = initialState, {type,payload}){
-    switch(type){
+function rootReducer(state = initialState, { type, payload }) {
+    switch (type) {
+
         case ADD_FAVORITE:
             return {
                 ...state,
-                myFavorites:[...state.myFavorites, payload]
+                allCharacters: [...state.allCharacters, payload],
+                myFavorites: [...state.myFavorites, payload],
             }
+
         case DELETE_FAVORITE:
-            const filtered = state.myFavorites.filter(
-                fav => fav.id !== payload
-            )
+            const filtered = state.myFavorites.filter(fav => fav.id !== payload)
             return {
                 ...state,
-                myFavorites:filtered
+                myFavorites: filtered,
             }
+
+        case FILTER:
+            const filterCopy = [...state.allCharacters]
+            const genderFilter = filterCopy.filter(char => char.gender === payload)
+            return {
+                ...state,
+                myFavorites: genderFilter,
+            }
+
+        case ORDER:
+            const orderCopy = [...state.allCharacters];
+            const orderedGender = orderCopy.sort((a, b) => {
+                if (a.id > b.id) { return payload === 'Ascendente' ? 1 : -1 }
+                if (a.id < b.id) { return payload === 'Ascendente' ? -1 : 1 }
+                else return 0;
+            })
+            return {
+                ...state,
+                myFavorites: orderedGender,
+            }
+
         default:
             return state
     }
