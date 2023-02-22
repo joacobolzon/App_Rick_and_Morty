@@ -13,14 +13,14 @@ import Favorites from './components/Favorites/Favorites.jsx'
 
 function App () {
   const navigate = useNavigate();
+  const [characters,setCharacters] = useState([]);
   const location = useLocation();
+  const [access,setAccess] = useState(false);
   
   const username = 'joaco@gmail.com';
   const password = 'joaco123';
   
-  const [access,setAccess] = useState(false);
   
-  const [characters,setCharacters] = useState([]);
   
   function login(userData) {
     if (userData.password === password && userData.username === username) {
