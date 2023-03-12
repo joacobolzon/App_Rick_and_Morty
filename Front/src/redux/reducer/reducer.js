@@ -37,7 +37,7 @@ function rootReducer(state = initialState, { type, payload }) {
             const orderCopy = [...state.allCharacters];
             const orderedGender = orderCopy.sort((a, b) => {
                 if (a.id > b.id) { return payload === 'Ascendente' ? 1 : -1 }
-                if (a.id < b.id) { return payload === 'Ascendente' ? -1 : 1 }
+                if (a.id < b.id) { return payload === 'Descendente' ? -1 : 1 }
                 else return 0;
             })
             return {
