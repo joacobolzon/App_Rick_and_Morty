@@ -17,10 +17,8 @@ function App () {
   const location = useLocation();
   const [access,setAccess] = useState(false);
   
-  const username = 'joaco@gmail.com';
-  const password = 'joaco123';
-  
-  
+  const username = '';
+  const password = '';
   
   function login(userData) {
     if (userData.password === password && userData.username === username) {
@@ -30,7 +28,7 @@ function App () {
  }
 
  const onSearch = (character) => {
-   fetch(`http://localhost:3001/rickandmorty/onsearch/${character}`)
+   fetch(`https://rickandmorty-s4g2.onrender.com/rickandmorty/onsearch/${character}`)
    .then((response) => response.json())
    .then((data) => {
      if (data.name) {

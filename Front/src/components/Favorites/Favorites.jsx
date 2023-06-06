@@ -20,8 +20,8 @@ export function Favorites({ myFavorites }) {
         <div>
             <div>
                 <select name='order' onClick={handleDispatch}>
-                    <option value='Ascendente'>Ascendente</option>
-                    <option value='Descendente'>Descendente</option>
+                    <option value='Ascendente'>Increasing</option>
+                    <option value='Descendente'>Decreasing</option>
                 </select>
                 <select name='filter' onClick={handleDispatch}>
                     <option value='Male'>Male</option>

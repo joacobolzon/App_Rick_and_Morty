@@ -1,11 +1,12 @@
 import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER } from './types.js';
 import axios from 'axios'
+const URL = 'https://rickandmorty-s4g2.onrender.com/'
 
 export const addFavorite = (fav) => {
   return async function (dispatch) {
     try {
       let request = await axios.post(
-        'http://localhost:3001/rickandmorty/fav',
+        `${URL}/rickandmorty/fav`,
         fav
       );
       dispatch({
@@ -21,7 +22,7 @@ export const addFavorite = (fav) => {
 export const delFavorite = (id) => {
   return async function (dispatch) {
     try {
-      await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`);
+      await axios.delete(`${URL}/rickandmorty/fav/${id}`);
       dispatch({
         type: DELETE_FAVORITE,
         payload: id,

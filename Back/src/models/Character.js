@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
    sequelize.define('Character', {
       id: {
-         type: DataTypes.NUMBER,
+         type: DataTypes.INTEGER,
          allowNull: false,
          primaryKey: true
       },
