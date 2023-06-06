@@ -1,6 +1,6 @@
 import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER } from './types.js';
 import axios from 'axios'
-const URL = 'https://rickandmorty-s4g2.onrender.com/'
+const URL = 'https://rickandmorty-s4g2.onrender.com'
 
 export const addFavorite = (fav) => {
   return async function (dispatch) {
