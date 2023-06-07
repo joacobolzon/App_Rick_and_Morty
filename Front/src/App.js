@@ -9,7 +9,7 @@ import Detail from './components/Detail/Detail.jsx'
 import Error from './components/Error/Error.jsx'
 import Form from './components/Form/Form.jsx'
 import Favorites from './components/Favorites/Favorites.jsx'
-
+import axios from "axios";
 
 function App () {
   const navigate = useNavigate();
@@ -17,6 +17,17 @@ function App () {
   const location = useLocation();
   const [access,setAccess] = useState(false);
   
+  const getAllChars = async() => {
+    let response = await axios.get('http://localhost:3001/allCharacters');
+    console.log(response.data);
+    const characters = response.data
+    setCharacters(characters)
+ }
+ useEffect(() => {
+   getAllChars()
+
+ },[])
+
   const username = '';
   const password = '';
   
@@ -28,7 +39,7 @@ function App () {
  }
 
  const onSearch = (character) => {
-   fetch(`https://rickandmorty-s4g2.onrender.com/rickandmorty/onsearch/${character}`)
+   fetch(`http://localhost:3001/rickandmorty/onsearch/${character}`)
    .then((response) => response.json())
    .then((data) => {
      if (data.name) {

@@ -6,7 +6,6 @@ const getFavs = (req, res) => {
 
 const postFavs = (req, res) => {
   fav.push(req.body);
-  console.log("log de favoritos add", fav);
   res.status(200).json(req.body);
 };
 
@@ -17,7 +16,6 @@ const deleteFavs = (req, res) => {
   if (character) {
 
     fav = fav.filter(f => f !== character)
-    console.log("log de favoritos delete", fav);
     res.status(200).json(character);
   } else {
     res.status(400).json({

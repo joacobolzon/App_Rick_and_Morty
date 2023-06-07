@@ -11,7 +11,7 @@ export default function Detail() {
   const { detailId } = useParams();
 
   useEffect(() => {
-    fetch(`https://rickandmorty-s4g2.onrender.com/rickandmorty/detail/${detailId}`)
+    fetch(`http://localhost:3001/rickandmorty/detail/${detailId}`)
       .then((response) => response.json())
       .then((char) => {
         if (char.name) {

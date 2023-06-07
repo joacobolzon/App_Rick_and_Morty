@@ -1,8 +1,9 @@
-import { DELETE_FAVORITE, ADD_FAVORITE, ORDER, FILTER } from "../actions/types";
+import { DELETE_FAVORITE, ADD_FAVORITE, ORDER, FILTER, GET_ALL_CHARACTERS } from "../actions/types";
 
 const initialState = {
     myFavorites: [],
     allCharacters: [],
+    characters:[],
 };
 
 
@@ -43,6 +44,11 @@ function rootReducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 myFavorites: orderedGender,
+            }
+        case GET_ALL_CHARACTERS:
+            return {
+                ...state,
+                characters:payload
             }
 
         default:

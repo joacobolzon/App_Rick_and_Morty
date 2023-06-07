@@ -1,6 +1,7 @@
 .cards_divContainer{
-    align-items : center;
-    display : flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+    margin: 10px;
 }
